@@ -20,11 +20,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="relative z-20 mb-6 flex flex-col items-left gap-0 lg:gap-2 text-sm uppercase tracking-[0.25em] text-[#b24a2f]"
-            style={{
-              textShadow:
-                "0 1px 8px rgba(0,0,0,0.6), 0 1px 2px rgba(0,0,0,0.8)",
-            }}
+            className="mb-6 flex flex-col items-left gap-0 lg:gap-2 text-sm uppercase tracking-[0.25em] text-[#b24a2f] mix-blend-difference"
           >
             <Disc3 size={24} />
             <span>
