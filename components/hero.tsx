@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import { motion } from "motion/react";
 import { ArrowDown, Disc3 } from "lucide-react";
@@ -9,25 +8,24 @@ import Image from "next/image";
 export function Hero() {
   return (
     <section className="noise relative flex min-h-screen flex-col px-6 py-6 md:px-12">
-      <div className="relative mx-auto mt-5 flex w-full max-w-7xl flex-1 items-center">
-        {/* Display on mobile */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-0 lg:hidden ">
+      <div className="relative mx-auto mt-5 flex w-full max-w-7xl flex-1 flex-col items-center lg:flex-row">
+        {/* Mobile: normal flow, sits above text and pushes it down */}
+        <div className="lg:hidden">
           <Vinyl accent="#b24a2f" label="Fred's" large={true} />
         </div>
 
-        <div className="z-10 max-w-4xl -mt-10">
+        <div className="z-10 max-w-4xl lg:-mt-10">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="mb-6 flex flex-col items-left gap-0 lg:gap-2 text-sm uppercase tracking-[0.25em] text-[#b24a2f] mix-blend-difference"
+            className="mb-6 flex flex-col items-left gap-0 lg:gap-2 text-sm uppercase tracking-[0.25em] text-[#b24a2f]"
           >
             <Disc3 size={24} />
             <span>
               The Most Complete Source for Newfoundland Music and DVDs!
             </span>
           </motion.p>
-
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -38,7 +36,6 @@ export function Hero() {
             <br />
             <span className="italic">matters.</span>
           </motion.h1>
-
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -50,11 +47,11 @@ export function Hero() {
           </motion.p>
         </div>
 
+        {/* Desktop only: absolute, overlapping on the right */}
         <div className="absolute right-0 top-1/2 hidden -translate-y-1/2 lg:block">
           <Vinyl accent="#b24a2f" label="FR" />
         </div>
       </div>
-
       <motion.a
         href="#featured"
         animate={{ y: [0, 8, 0] }}
